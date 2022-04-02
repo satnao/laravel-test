@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  workspace:
+    build: workspace
+    platform: linux/x86_64
+    command: sleep infinity
+    volumes:
+      - ../:/var/workspace/
+      - ./volumes/extensions/:/root/.vscode-server/extensions/
+      - ./volumes/.zsh_history:/root/.zsh_history
+      - ~/.ssh/:/root/.ssh/
+    ports:
+      - 8080:8080
+  db:
+    image: mysql:8.0
+    platform: linux/x86_64
+    volumes:
+      - ./volumes/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306

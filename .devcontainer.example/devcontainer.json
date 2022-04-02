@@ -1,0 +1,22 @@
+{
+  "name": "laravel-test",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/var/workspace",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/bin/zsh",
+        "args": ["-l"]
+      },
+      "ash": {
+        "path": "/bin/ash"
+      }
+    },
+  },
+  "forwardPorts": [
+    9003
+  ],
+  "shutdownAction": "stopCompose"
+}
