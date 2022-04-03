@@ -32,3 +32,20 @@ php artisan serve --host=0.0.0.0 --port=8080
 ```
 
 http://localhost:8080 を開く
+
+## DB設定
+
+.envを修正。
+
+```
+DB_HOST=db
+DB_USERNAME=root
+```
+
+DB名「laravel」を作成。
+
+↓を実行するとテーブル等が作成される。
+
+```
+php artisan migrate
+```
